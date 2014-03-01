@@ -1,0 +1,7 @@
+---
+# PHP.
+- name: Install PHP MySQL dependencies.
+  yum: name={{ item }} state=installed enablerepo={{ php_enablerepo }}
+  with_items:
+    - php-mysql
+  notify: restart apache
