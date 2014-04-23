@@ -1,7 +1,20 @@
 ---
-# PHP.
-- name: Install PHP MySQL dependencies.
-  yum: name={{ item }} state=installed enablerepo={{ php_enablerepo }}
+- name: Install PHP MySQL dependencies (RedHat).
+  yum: >
+    name={{ item }}
+    state=installed
+    enablerepo={{ php_enablerepo }}
   with_items:
     - php-mysql
   notify: restart apache
+  when: ansible_os_family == 'RedHat'
+
+- name: Install PHP MySQL dependencies (Debian).
+  apt: >
+    name={{ item }}
+    state=installed
+  with_items:
+    - php5-mysql
+  notify: restart apache
+  when: ansible_os_family == 'Debian'
+
