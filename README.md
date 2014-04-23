@@ -1,5 +1,7 @@
 # Ansible Role: PHP-MySQL
 
+[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-php-mysql.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-php-mysql)
+
 Installs PHP MySQL support on RedHat/CentOS/Debian/Ubuntu.
 
 ## Requirements

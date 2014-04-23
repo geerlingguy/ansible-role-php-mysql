@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - geerlingguy.mysql
+    - geerlingguy.php
+    - ansible-role-php-mysql
