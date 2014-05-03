@@ -19,7 +19,6 @@ Available variables are listed below, along with default values (see `vars/main.
 ## Dependencies
 
   - geerlingguy.php
-  - geerlingguy.mysql
 
 ## Example Playbook
 

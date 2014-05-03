@@ -1,7 +1,6 @@
 ---
 dependencies:
   - { role: geerlingguy.php }
-  - { role: geerlingguy.mysql }
 
 galaxy_info:
   author: geerlingguy
