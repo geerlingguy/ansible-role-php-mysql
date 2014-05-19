@@ -6,7 +6,9 @@
     enablerepo={{ php_enablerepo }}
   with_items:
     - php-mysql
-  notify: restart webserver
+  notify:
+    - restart webserver
+    - restart php-fpm
   when: ansible_os_family == 'RedHat'
 
 - name: Install PHP MySQL dependencies (Debian).
@@ -15,6 +17,7 @@
     state=installed
   with_items:
     - php5-mysql
-  notify: restart webserver
+  notify:
+    - restart webserver
+    - restart php-fpm
   when: ansible_os_family == 'Debian'
-
