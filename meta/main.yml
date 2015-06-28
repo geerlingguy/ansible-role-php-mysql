@@ -4,7 +4,7 @@ dependencies:
 
 galaxy_info:
   author: geerlingguy
-  description: PHP MySQL support for RedHat/CentOS/Debian/Ubuntu
+  description: PHP MySQL support for RedHat/CentOS and Debian/Ubuntu
   company: "Midwestern Mac, LLC"
   license: "license (BSD, MIT)"
   min_ansible_version: 1.4
