@@ -5,7 +5,7 @@
 
 - name: Define php_mysql_package.
   set_fact:
-    php_mysql_package: "{{ __php_mysql_package | list }}"
+    php_mysql_package: "{{ __php_mysql_package }}"
   when: php_mysql_package is not defined
 
 # Installation.
