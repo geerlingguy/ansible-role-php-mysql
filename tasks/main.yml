@@ -12,7 +12,7 @@
 - name: Install PHP MySQL dependencies (RedHat).
   yum:
     name: "{{ php_mysql_package }}"
-    state: installed
+    state: present
     enablerepo: "{{ php_enablerepo }}"
   notify:
     - restart webserver
@@ -20,9 +20,9 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Install PHP MySQL dependencies (Debian).
-  apt: >
-    name="{{ php_mysql_package }}"
-    state=present
+  apt:
+    name: "{{ php_mysql_package }}"
+    state: present
   notify:
     - restart webserver
     - restart php-fpm
