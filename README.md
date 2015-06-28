@@ -16,6 +16,11 @@ Available variables are listed below, along with default values (see `vars/main.
 
 (RedHat/CentOS only) If you have enabled any additional repositories (might I suggest geerlingguy.repo-epel or geerlingguy.repo-remi), those repositories can be listed under this variable (e.g. `remi,epel`). This can be handy, as an example, if you want to install the latest version of PHP 5.4, which is in the Remi repository.
 
+    php_mysql_package: php-mysql # RedHat
+    php_mysql_package: php5-mysql # Debian
+
+The PHP MySQL package to install via apt/yum. This should only be overridden if you need to install a unique/special package for MySQL support, as in the case of using software collections on Enterprise Linux.
+
 ## Dependencies
 
   - geerlingguy.php
