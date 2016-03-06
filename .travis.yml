@@ -50,9 +50,8 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
-  # Ensure PHP mysql extension is present.
-  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i
-  # - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i | grep 'memory_limit.*192'
+  # Ensure PHP mysql support is enabled.
+  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i | grep 'MySQL Support => enabled'
 
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'
