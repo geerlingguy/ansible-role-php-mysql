@@ -2,10 +2,10 @@
 - hosts: localhost
   remote_user: root
 
-  vars:
+  vars: []
 
   roles:
     - geerlingguy.apache
     - geerlingguy.mysql
     - geerlingguy.php
-    - ansible-role-php-mysql
+    - role_under_test
