@@ -43,7 +43,7 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Ensure PHP mysql support is enabled.
-  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i | grep 'MySQL Support => enabled'
+  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i | grep 'mysqlnd => enabled'
 
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'
