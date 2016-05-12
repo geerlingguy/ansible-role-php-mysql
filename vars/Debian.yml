@@ -1,2 +1,2 @@
 ---
-__php_mysql_package: php5-mysql
+__php_mysql_package: php7.0-mysql
