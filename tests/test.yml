@@ -10,10 +10,6 @@
       include_vars: centos7-vars.yml
       when: ansible_os_family == 'RedHat' and ansible_distribution_major_version == "7"
 
-    - name: Add repository for PHP 7.0.
-      apt_repository: repo='ppa:ondrej/php'
-      when: ansible_os_family == 'Debian'
-
   roles:
     - role: geerlingguy.repo-remi
       when: ansible_os_family == 'RedHat'
