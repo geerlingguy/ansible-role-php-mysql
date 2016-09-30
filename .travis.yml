@@ -36,7 +36,7 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
-  # Ensure PHP mysql support is enabled.
+  # Ensure PHP MySQL support is enabled.
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i | grep 'mysqlnd => enabled'
 
 notifications:
