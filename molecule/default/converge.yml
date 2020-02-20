@@ -1,0 +1,31 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  vars:
+    php_enablerepo: "remi,remi-php72"
+    php_default_version_debian: "7.2"
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
+    - name: Set the correct php_mysql_package for Debian.
+      set_fact:
+        php_mysql_package: "php7.2-mysql"
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - role: geerlingguy.repo-remi
+      when: ansible_os_family == 'RedHat'
+    - role: geerlingguy.apache
+    - role: geerlingguy.mysql
+    - role: geerlingguy.php
+    - role: geerlingguy.php-mysql
+
+  post_tasks:
+    - name: Make sure the PHP MySQL extension is present.
+      command: "php -i | grep 'mysqlnd => enabled'"
+      changed_when: false
