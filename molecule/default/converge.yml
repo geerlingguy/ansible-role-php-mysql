@@ -6,6 +6,7 @@
   vars:
     php_enablerepo: "remi,remi-php72"
     php_default_version_debian: "7.2"
+    mysql_python_package_debian: python3-mysqldb
 
   pre_tasks:
     - name: Update apt cache.
