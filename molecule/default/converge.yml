@@ -5,17 +5,10 @@
 
   vars:
     php_enablerepo: "remi,remi-php72"
-    php_default_version_debian: "7.2"
-    mysql_python_package_debian: python3-mysqldb
 
   pre_tasks:
     - name: Update apt cache.
       apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-
-    - name: Set the correct php_mysql_package for Debian.
-      set_fact:
-        php_mysql_package: "php7.2-mysql"
       when: ansible_os_family == 'Debian'
 
   roles:
