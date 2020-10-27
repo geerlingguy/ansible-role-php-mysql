@@ -1,6 +1,6 @@
 # Ansible Role: PHP-MySQL
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-php-mysql.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-php-mysql)
+[![Build Status](https://travis-ci.com/geerlingguy/ansible-role-php-mysql.svg?branch=master)](https://travis-ci.com/geerlingguy/ansible-role-php-mysql)
 
 Installs PHP [MySQL](https://www.mysql.com/) support on Linux.
 
