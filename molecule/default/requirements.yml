@@ -1,5 +1,4 @@
 ---
-- src: geerlingguy.repo-remi
 - src: geerlingguy.apache
 - src: geerlingguy.mysql
 - src: geerlingguy.php
